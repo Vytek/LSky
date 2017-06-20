@@ -1,0 +1,66 @@
+
+
+=======================================- ChangeLog -=======================================
+___________________________________________________________________________________________
+
+
+
+=======================================-  Current  -======================================= 
+
+-------------------------------------------------------------------------------------------
+v 2.0
+===========================================================================================
+
+
+
+* Changed name to LSky.
+* Rewrited all code, now is new.
+
+* Improved all C# Code.
+* Improved all Shaders.
+* Improved Curve and Gradient System.
+
+- Improved Atmospheric Scattering.
+- Improved Outer Space.
+- Improved Time Of Day.
+- Time of Day has been separated from the sky controller.
+
+* Added LSkyColor structure.
+* Added LSkyFloat structure.
+* Added Color correction.
+* Added new moon texture.
+* Added new Outer Space Cubemap.
+* Added Reflection Probe refresh.
+
+* Removed DisplayTimeScript(Temporarily).
+* Removed Examples scripts (Temporarily).
+
+
+
+=======================================-    Old    -=======================================
+
+
+
+-------------------------------------------------------------------------------------------
+v 1.2.9c
+===========================================================================================
+
+GitHub: https://github.com/Akue/TimeOfDaySystemFree
+
+Notice 2: The "Unity-Custom-Procedural-Skybox" shader is property by Unity Technologies.
+-------------------------------------------------------------------------------------------
+
+Notice 3: Not mobile optimized, I only tested in Galaxy Tablet A (38-40FPS).
+
+realistic full moon texture : http://www.mediafire.com/file/dsubr1ft58sgjcc/Full_Moon_Texture_Free_v1.1.unitypackage
+
+Notice 4: Due to lack of time I decided not to continue working in the clouds for this asset for now.
+
+
+* Cleaned moon halo.
+* Cleaned atmosphere night color.
+* Optimized horizon fade.
+
+
+
+
