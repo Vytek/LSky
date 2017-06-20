@@ -88,7 +88,7 @@ Shader "AC/LSky/Skybox"
 
 				o.moonCoords = MOON_COORDS(v.vertex);
 				//------------------------------------------------------------------------------
-				float3 sunCoords   = SUN_COORDS(v.vertex);
+				float3 sunCoords   = SUN_COORDS(v.vertex.xyz);
 				o.outerSpaceCoords = OUTER_SPACE_COORDS(sunCoords);
 				o.starsNoiseCoords = STARS_NOISE_COORDS(sunCoords);
 				//------------------------------------------------------------------------------

@@ -15,6 +15,19 @@ https://www.eso.org/public/outreach/copyright/
 
 
 
+==============
+   Notices
+==============
+
+If you want to collaborate with a donation you can do it from the git hub repository
+
+https://github.com/Akue/LSky
+//--------------------------------------------------------------------------------------
+
+Clouds & Fog Scatteing, coming soon.
+
+
+
 
 ==============
    Extra.

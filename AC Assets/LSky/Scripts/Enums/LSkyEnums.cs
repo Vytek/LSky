@@ -23,4 +23,5 @@ namespace AC.LSky
 
 	// Atmosphere.
 	public enum LSkyNightColorType{ Simple, Atmospheric }
+	public enum LSkyFogMode{ Linear, Exponential, ExponentialSquared }
 }

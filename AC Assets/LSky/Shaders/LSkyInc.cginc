@@ -111,7 +111,6 @@ uniform half  _StarsScintillation;
 uniform half3 _NebulaColor;
 uniform half  _NebulaIntensity;
 
-#define SUN_COORDS(vert) mul((float3x3)LSky_SunMatrix, vert)
 
 #define OUTER_SPACE_COORDS(sunCoords) mul((float3x3)_OuterSpaceMatrix, sunCoords)
 

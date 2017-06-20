@@ -221,7 +221,7 @@ namespace AC.LSky
 			serObj.Update ();
 
 			EditorGUILayout.Separator();
-			AC_EditorUtility.ShurikenHeader("cSky Lite", TextTitleStyle, 30);
+			AC_EditorUtility.ShurikenHeader("LSky", TextTitleStyle, 30);
 
 			AC_EditorUtility.ShurikenFoldoutHeader("Components And Resources", TextTitleStyle, CRFoldout);
 			if(CRFoldout.boolValue) 
@@ -690,7 +690,7 @@ namespace AC.LSky
 			}
 			EditorGUILayout.EndHorizontal ();
 
-			EditorGUILayout.HelpBox("Reflection Probe configure in cSkyLiteReflection", MessageType.Info);
+			EditorGUILayout.HelpBox("Reflection Probe configure in LSkyReflection", MessageType.Info);
 
 			AC_EditorUtility.Separator(SeparatorHeight);
 			EditorGUILayout.Separator();

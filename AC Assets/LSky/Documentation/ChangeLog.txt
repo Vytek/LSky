@@ -4,14 +4,9 @@
 ___________________________________________________________________________________________
 
 
-
-=======================================-  Current  -======================================= 
-
--------------------------------------------------------------------------------------------
-v 2.0
-===========================================================================================
-
-
+--------
+v 2.0.1
+========
 
 * Changed name to LSky.
 * Rewrited all code, now is new.
@@ -36,30 +31,9 @@ v 2.0
 * Removed Examples scripts (Temporarily).
 
 
-
 =======================================-    Old    -=======================================
 
 
-
--------------------------------------------------------------------------------------------
-v 1.2.9c
-===========================================================================================
-
-GitHub: https://github.com/Akue/TimeOfDaySystemFree
-
-Notice 2: The "Unity-Custom-Procedural-Skybox" shader is property by Unity Technologies.
--------------------------------------------------------------------------------------------
-
-Notice 3: Not mobile optimized, I only tested in Galaxy Tablet A (38-40FPS).
-
-realistic full moon texture : http://www.mediafire.com/file/dsubr1ft58sgjcc/Full_Moon_Texture_Free_v1.1.unitypackage
-
-Notice 4: Due to lack of time I decided not to continue working in the clouds for this asset for now.
-
-
-* Cleaned moon halo.
-* Cleaned atmosphere night color.
-* Optimized horizon fade.
 
 
 
