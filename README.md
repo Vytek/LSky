@@ -11,7 +11,6 @@ Dynamic Sky Basic Solution
 - Night Color. 
 - 2d Moon. 
 - Outer Space 
-- PBS Support. 
 - LDR & HDR Support. 
 - Linear & Gamma Color Space Support. 
 
