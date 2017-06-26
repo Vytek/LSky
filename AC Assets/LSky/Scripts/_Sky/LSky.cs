@@ -10,10 +10,9 @@ using UnityEngine;
 
 namespace AC.LSky
 {
-
+	[AddComponentMenu("AC/LSky/LSky Manager")]
 	[ExecuteInEditMode] public partial class LSky : MonoBehaviour 
 	{
-
 
 
 		#region Unity
@@ -39,8 +38,6 @@ namespace AC.LSky
 
 
 		#endregion
-
-
 
 		#region Celestials
 
@@ -157,7 +154,7 @@ namespace AC.LSky
 			float kOuterRadius2 = kOuterRadius * kOuterRadius;
 			//-----------------------------------------------------------------------------------------------------------------------------
 
-			float kScale               = 1.0f / (kOuterRadius - 1.0f);
+			float kScale               = (1.0f / (kOuterRadius - 1.0f));
 			float kScaleDepth          = 0.25f;
 			float kScaleOverScaleDepth = kScale / kScaleDepth;
 			//-----------------------------------------------------------------------------------------------------------------------------
@@ -257,7 +254,6 @@ namespace AC.LSky
 
 		#endregion
 
-
 		#region Color Correction
 
 		void ColorCorrection()
@@ -294,12 +290,16 @@ namespace AC.LSky
 
 		#region Lighting
 
+
+		private bool m_SunLightEnable;
 		void Lighting()
 		{
 
+			m_SunLightEnable = !CheckDirLightEnable(Mathf.Max(0.0f, Mathf.Min(1.0f, SunDirection.y + 0.30f)), sunLightThreshold);
+
 			m_SunLight.color     = sunLightColor.OutputColor;
 			m_SunLight.intensity = sunLightIntensity.OutputValue;
-			m_SunLight.enabled   = !CheckDirLightEnable(Mathf.Max(0.0f, Mathf.Min(1.0f, SunDirection.y + 0.30f)), sunLightThreshold);
+			m_SunLight.enabled   = m_SunLightEnable;
 			//---------------------------------------------------------------------------------------------------------------------------
 
 			m_MoonLight.color     = moonLightColor.OutputColor;
@@ -331,7 +331,7 @@ namespace AC.LSky
 			}
 
 			RenderSettings.ambientGroundColor   = ambientGroundColor.OutputColor;
-			skyboxMaterial.SetColor("_GroundColor", ambientGroundColor.OutputColor);
+			Shader.SetGlobalColor("LSky_GroundColor", ambientGroundColor.OutputColor);
 			//---------------------------------------------------------------------------------------------------------------------------
 
 			RenderSettings.fog = enableUnityFog;
@@ -357,6 +357,16 @@ namespace AC.LSky
 		}
 
 		#endregion
+
+
+
+		#region Day States
+
+		public bool IsDay{ get{ return m_SunLightEnable; } }
+		public bool IsNight{ get{ return !IsDay; }}
+
+		#endregion
+
 
 	}
 }

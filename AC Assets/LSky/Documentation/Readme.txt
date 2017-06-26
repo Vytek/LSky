@@ -6,7 +6,7 @@
 
 Milky Way: ESO/S. Brunier
 
-CREATIVE COMMONS ESO Milky Way panoramic capture, resised and convert in cubemap.
+CREATIVE COMMONS ESO Milky Way panoramic capture, resized and converted in cubemap.
 
 Links: 
 https://www.eso.org/public/images/eso0932a/
@@ -19,14 +19,10 @@ https://www.eso.org/public/outreach/copyright/
    Notices
 ==============
 
-If you want to collaborate with a donation you can do it from the git hub repository
+Git Hub repository(If you want to donate you can do it from the repository).
 
 https://github.com/Akue/LSky
 //--------------------------------------------------------------------------------------
-
-Clouds & Fog Scatteing, coming soon.
-
-
 
 
 ==============

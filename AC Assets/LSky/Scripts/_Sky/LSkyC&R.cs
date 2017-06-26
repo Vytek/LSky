@@ -13,11 +13,11 @@ namespace AC.LSky
 	public partial class LSky : MonoBehaviour 
 	{
 
-		public bool      applySkybox     = true;  // Send skybox material to Lighting window.
-		public Material  skyboxMaterial  = null;  // Skybox material.
-		public Texture2D moonTexture     = null;  // Moon texture.
-		public Cubemap   outerSpaceCube  = null;  // RGB: Nebula, Alpha: Stars field.
-		public Cubemap   starsNoiseCube  = null;  // Stars noise texture.
+		public bool      applySkybox    = true;  // Send skybox material to Lighting window.
+		public Material  skyboxMaterial = null;  // Skybox material.
+		public Texture2D moonTexture    = null;  // Moon texture.
+		public Cubemap   outerSpaceCube = null;  // RGB: Nebula, Alpha: Stars field.
+		public Cubemap   starsNoiseCube = null;  // Stars noise texture.
 		//------------------------------------------------------------------------------------
 
 		[SerializeField] private Light m_SunLight = null;        // Sun light component.

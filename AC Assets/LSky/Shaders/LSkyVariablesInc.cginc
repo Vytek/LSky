@@ -48,6 +48,10 @@ uniform float4x4 LSky_SunMatrix;
 uniform float4x4 LSky_MoonMatrix;
 //---------------------------------------
 
+// Reflection.
+uniform half3 LSky_GroundColor;
+//---------------------------------------
+
 // HDR.
 uniform half LSky_Exposure;
 //---------------------------------------

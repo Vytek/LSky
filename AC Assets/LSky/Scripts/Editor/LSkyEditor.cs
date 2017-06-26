@@ -15,7 +15,7 @@ namespace AC.LSky
 
 
 		SerializedObject  serObj;
-		LSky             _target;
+//		LSky             _target;
 		//----------------------------------------------
 
 		SerializedProperty applySkybox;
@@ -116,7 +116,7 @@ namespace AC.LSky
 		{
 
 			serObj  = new SerializedObject(target);
-			_target = (LSky)target;
+		//	_target = (LSky)target;
 			//----------------------------------------------------------------
 
 			applySkybox    = serObj.FindProperty("applySkybox");

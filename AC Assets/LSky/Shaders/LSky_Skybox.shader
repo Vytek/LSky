@@ -3,7 +3,14 @@
 Shader "AC/LSky/Skybox"
 {
 
-	Properties{}
+	Properties
+	{
+
+		_HorizonFade("Horizon Fade", Range(0,0.20)) = 0.006
+		_GroundFade("Ground Fade", Range(0,60)) = 30
+		_GroundAltitude("Ground Altitude", Range(0, 0.1)) = 0.01
+
+	}
 
 	SubShader
 	{
@@ -45,7 +52,10 @@ Shader "AC/LSky/Skybox"
 			//-------------------------------------------------------
 
 
-			uniform half3 _GroundColor;
+			float _HorizonFade;
+
+			half _GroundFade;
+			half _GroundAltitude;
 			//-------------------------------------------------------
 
 			struct appdata
@@ -93,7 +103,7 @@ Shader "AC/LSky/Skybox"
 				o.starsNoiseCoords = STARS_NOISE_COORDS(sunCoords);
 				//------------------------------------------------------------------------------
 
-				o.extinction = saturate((o.worldPos.y-0.005)*5);
+				o.extinction = saturate((o.worldPos.y-_HorizonFade)*5);
 				//------------------------------------------------------------------------------
 
 				return o;
@@ -146,9 +156,15 @@ Shader "AC/LSky/Skybox"
 				color += outerSpace * i.extinction;
 				//---------------------------------------------------------------------------------------------------------------------------------------
 
-				ColorCorrection(color, _GroundColor);
-
-				color = lerp(color, _GroundColor, saturate((-ray.y - 0.01) * 30));
+				if(_GroundFade > 0.0)
+				{
+					ColorCorrection(color, LSky_GroundColor);
+					color = lerp(color, LSky_GroundColor, saturate((-ray.y - _GroundAltitude) * _GroundFade));
+				}
+				else
+				{
+					ColorCorrection(color);
+				}
 
 				return half4(color,1);
 			}

@@ -12,6 +12,7 @@ using UnityEngine;
 namespace AC.LSky
 {
 
+	[AddComponentMenu ("AC/LSky/Time Of Day")]
 	[ExecuteInEditMode]	public class LSkyTOD : LSkyTime
 	{
 
@@ -98,6 +99,11 @@ namespace AC.LSky
 		//-----------------------------------------------------------------------------------------
 
 
+		public int CurrentHour{ get{ return (int)Mathf.Floor(timeline); } }
+		public int CurrentMinute{ get{ return (int)Mathf.Floor( (timeline - CurrentHour) * 60); } }
+		//-----------------------------------------------------------------------------------------
+
+
 		void Update()
 		{
 
@@ -132,5 +138,8 @@ namespace AC.LSky
 
 			return true;
 		}
+			
+
+
 	}
 }

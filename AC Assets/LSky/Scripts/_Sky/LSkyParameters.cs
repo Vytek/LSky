@@ -783,7 +783,7 @@ namespace AC.LSky
 		//----------------------------------------------------------------------------------------------------
 
 		/// <summary>
-		/// Evaluate time by direction.
+		/// Evaluate time by "Y" direction.
 		/// </summary>
 		/// <returns>The evaluate time.</returns>
 		/// <param name="sourceDir">Source dir.</param>

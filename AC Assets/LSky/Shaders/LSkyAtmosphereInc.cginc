@@ -64,7 +64,8 @@ inline void AtmosphericScattering(float3 ray, out half3 inScatter, out half4 out
 		//---------------------------------------------------------------------------------------------------------------------------------
 
 		float  scatter     = startOffset + depth * ( Scale(lightAngle) - Scale(cameraAngle) );
-		float3 attenuate   = exp(-clamp(scatter,0.0,50) * betaAtten);
+		//float3 attenuate   = exp(-clamp(scatter,0.0, 50) * betaAtten);
+		float3 attenuate   = exp(-scatter * betaAtten);
 		float3 dayColor    = attenuate * (depth * scaledLength) * LSky_DayAtmosphereTint;
 		//---------------------------------------------------------------------------------------------------------------------------------
 
@@ -82,7 +83,8 @@ inline void AtmosphericScattering(float3 ray, out half3 inScatter, out half4 out
 		#endif
 		//---------------------------------------------------------------------------------------------------------------------------------
 		float  nightScatter   = startOffset + depth * (Scale(nightLightAngle) - Scale(cameraAngle));
-		float3 nightAttenuate = exp(-clamp(nightScatter,0.0, 50) * betaAtten );
+		//float3 nightAttenuate = exp(-clamp(nightScatter,0.0, 50) * betaAtten );
+		float3 nightAttenuate = exp(-nightScatter * betaAtten);
 		//---------------------------------------------------------------------------------------------------------------------------------
 
 		nightColor  = (nightAttenuate * (depth * scaledLength)) * LSky_NightAtmosphereTint;
@@ -114,6 +116,7 @@ inline void AtmosphericScattering(float3 ray, out half3 inScatter, out half4 out
 	outScatter.a    = (Desaturate(outColor.a));
 	//-------------------------------------------------------------------------------------------------------------------------------------
 }
+
 
 
 

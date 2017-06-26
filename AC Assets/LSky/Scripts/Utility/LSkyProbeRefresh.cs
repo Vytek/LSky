@@ -11,9 +11,9 @@ using UnityEngine.Rendering;
 
 namespace AC.LSky
 {
-	
+	[AddComponentMenu("AC/LSky/Probe Refresh")]
 	[RequireComponent(typeof(ReflectionProbe))]
-	public class LSkyReflection : MonoBehaviour
+	public class LSkyProbeRefresh : MonoBehaviour
 	{
 
 		[SerializeField] private ReflectionProbe m_Probe = null;
