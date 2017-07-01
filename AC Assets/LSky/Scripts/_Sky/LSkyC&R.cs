@@ -21,24 +21,26 @@ namespace AC.LSky
 		//------------------------------------------------------------------------------------
 
 		[SerializeField] private Light m_SunLight = null;        // Sun light component.
-		public Transform SunLightTransform{ get; private set; }  // Sun light transform component.
+		private Transform m_SunLightTransform;                   // Sun light transform component.
+		public  Transform SunLightTransform{ get{ return m_SunLightTransform; } }
 
 		[SerializeField] private Light m_MoonLight = null;       // Moon light component.
-		public Transform MoonLightTransform{ get; private set; } // Moon light transform component.
+		private Transform m_MoonLightTransform;                  // Moon light transform component.
+		public  Transform MoonLightTransform{ get{ return m_MoonLightTransform; } }
 		//------------------------------------------------------------------------------------
 
 		// Cache necessary components.
 		void CacheComponents()
 		{
 			if(m_SunLight  != null) 
-				SunLightTransform  = m_SunLight.transform;
+				m_SunLightTransform  = m_SunLight.transform;
 			else
-				SunLightTransform  = null;
+				m_SunLightTransform  = null;
 
 			if(m_MoonLight != null) 
-				MoonLightTransform = m_MoonLight.transform;
+				m_MoonLightTransform = m_MoonLight.transform;
 			else
-				MoonLightTransform = null;
+				m_MoonLightTransform = null;
 		}
 		//------------------------------------------------------------------------------------
 
@@ -48,7 +50,7 @@ namespace AC.LSky
 		/// <param name="rot">Rot.</param>
 		public void SetSunLightLocalRotation(Quaternion rot)
 		{
-			SunLightTransform.localRotation = rot;
+			m_SunLightTransform.localRotation = rot;
 		}
 
 		/// <summary>
@@ -57,7 +59,7 @@ namespace AC.LSky
 		/// <param name="rot">Rot.</param>
 		public void SetSunLightRotation(Quaternion rot)
 		{
-			SunLightTransform.rotation = rot;
+			m_SunLightTransform.rotation = rot;
 		}
 		//------------------------------------------------------------------------------------
 
@@ -68,7 +70,7 @@ namespace AC.LSky
 		/// <param name="rot">Rot.</param>
 		public void SetMoonLightLocalRotation(Quaternion rot)
 		{
-			MoonLightTransform.localRotation = rot;
+			m_MoonLightTransform.localRotation = rot;
 		}
 
 		/// <summary>
@@ -77,7 +79,7 @@ namespace AC.LSky
 		/// <param name="rot">Rot.</param>
 		public void SetMoonLightRotation(Quaternion rot)
 		{
-			MoonLightTransform.rotation = rot;
+			m_MoonLightTransform.rotation = rot;
 		}
 
 
@@ -88,13 +90,13 @@ namespace AC.LSky
 			if(m_SunLight == null)
 				return false;
 
-			if(SunLightTransform == null)
+			if(m_SunLightTransform == null)
 				return false;
 
 			if(m_MoonLight == null)
 				return false;
 
-			if(MoonLightTransform == null)
+			if(m_MoonLightTransform == null)
 				return false;
 
 			if(moonTexture == null)

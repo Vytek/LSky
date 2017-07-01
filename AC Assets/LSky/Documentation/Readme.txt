@@ -19,7 +19,7 @@ https://www.eso.org/public/outreach/copyright/
    Notices
 ==============
 
-Git Hub repository(If you want to donate you can do it from the repository).
+GitHub repository(donate or collaborate in proyect from the repository).
 
 https://github.com/Akue/LSky
 //--------------------------------------------------------------------------------------

@@ -148,6 +148,38 @@ inline half3 OuterSpace(float3 coords, float3 noiseCoords)
 
 	return starsField + nebula;
 }
+
+
+inline half3 OuterSpace(float3 coords, float3 noiseCoords, half nebulaExponent)
+{
+
+	half4 cube = texCUBE(_OuterSpaceCube, coords);
+
+	half3 starsField = 0.0, nebula = 0.0;
+
+	#ifdef LSKY_ENABLE_STARS
+
+	half noise = StarsScintillation(noiseCoords);
+
+	half field = cube.a * _StarsIntensity;
+
+	starsField =  field * _StarsColor;
+
+	if(field>= 0.2)
+		starsField *= noise;
+
+	#endif
+
+	#ifdef LSKY_ENABLE_NEBULA
+
+	if(abs(nebulaExponent) > 0)
+		cube.rgb = pow(cube.rgb, nebulaExponent);
+
+	nebula =  cube.rgb * _NebulaColor  * _NebulaIntensity;
+	#endif
+
+	return starsField + nebula;
+}
 //-------------------------------------------------------------------------------------------
 
 

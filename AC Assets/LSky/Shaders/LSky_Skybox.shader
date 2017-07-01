@@ -9,6 +9,7 @@ Shader "AC/LSky/Skybox"
 		_HorizonFade("Horizon Fade", Range(0,0.20)) = 0.006
 		_GroundFade("Ground Fade", Range(0,60)) = 30
 		_GroundAltitude("Ground Altitude", Range(0, 0.1)) = 0.01
+		_NebulaExponent("Nebula Exponent", Range(0, 20)) = 3
 
 	}
 
@@ -53,9 +54,10 @@ Shader "AC/LSky/Skybox"
 
 
 			float _HorizonFade;
-
+			half _NebulaExponent;
 			half _GroundFade;
 			half _GroundAltitude;
+
 			//-------------------------------------------------------
 
 			struct appdata
@@ -143,7 +145,7 @@ Shader "AC/LSky/Skybox"
 
 
 				// Outer Space
-				half3 outerSpace = OuterSpace(i.outerSpaceCoords, i.starsNoiseCoords) * i.outScatter.a;
+				half3 outerSpace = OuterSpace(i.outerSpaceCoords, i.starsNoiseCoords, _NebulaExponent) * i.outScatter.a;
 
 				#ifdef LSKY_ENABLE_SUN_DISC
 				outerSpace *= saturate(1.0 - sunDisc.r);

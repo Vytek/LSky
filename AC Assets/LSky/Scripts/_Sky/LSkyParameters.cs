@@ -748,8 +748,8 @@ namespace AC.LSky
 
 		#region Get Celestials direction
 
-		public Vector3 SunDirection { get { return -SunLightTransform.forward;  } }
-		public Vector3 MoonDirection{ get { return -MoonLightTransform.forward; } }
+		public Vector3 SunDirection { get { return -m_SunLightTransform.forward;  } }
+		public Vector3 MoonDirection{ get { return -m_MoonLightTransform.forward; } }
 
 		#endregion
 

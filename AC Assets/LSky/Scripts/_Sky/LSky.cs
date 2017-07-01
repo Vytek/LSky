@@ -44,7 +44,7 @@ namespace AC.LSky
 		void Sun()
 		{
 
-			Shader.SetGlobalMatrix("LSky_SunMatrix", SunLightTransform.worldToLocalMatrix); 
+			Shader.SetGlobalMatrix("LSky_SunMatrix", m_SunLightTransform.worldToLocalMatrix); 
 			Shader.SetGlobalVector("LSky_SunDir", SunDirection);
 
 			if (!enableSunDisc)
@@ -63,7 +63,7 @@ namespace AC.LSky
 		{
 
 			Shader.SetGlobalVector("LSky_MoonDir", MoonDirection);
-			Shader.SetGlobalMatrix("LSky_MoonMatrix", MoonLightTransform.worldToLocalMatrix);
+			Shader.SetGlobalMatrix("LSky_MoonMatrix", m_MoonLightTransform.worldToLocalMatrix);
 
 			if(!enableMoon) 
 			{
