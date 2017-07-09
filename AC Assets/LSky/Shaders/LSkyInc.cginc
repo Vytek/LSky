@@ -172,7 +172,7 @@ inline half3 OuterSpace(float3 coords, float3 noiseCoords, half nebulaExponent)
 
 	#ifdef LSKY_ENABLE_NEBULA
 
-	if(abs(nebulaExponent) > 0)
+	if(abs(nebulaExponent) > 1)
 		cube.rgb = pow(cube.rgb, nebulaExponent);
 
 	nebula =  cube.rgb * _NebulaColor  * _NebulaIntensity;

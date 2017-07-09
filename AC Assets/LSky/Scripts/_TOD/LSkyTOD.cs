@@ -19,10 +19,14 @@ namespace AC.LSky
 		private LSky m_SkyManager = null;
 		private Transform m_Transform = null;
 
-		public float EVALUATE_TIME_BY_TIMELINE{ get { return timeline/k_HoursPerDay; }}
+		[Range(-12f, 12f)] public int UTC = 0;
+
+		public float Timeline{ get{return timeline + UTC; } }
+
+		public float EVALUATE_TIME_BY_TIMELINE{ get { return timeline/(k_HoursPerDay); }}
 		//-----------------------------------------------------------------------------------------
 
-		[Range(-14f, 14f)] public float UTC = 0.0f;
+	
 
 		[LSkyFloatAttribute(-180f, 180f, 0.0f, 0.0f, 1.0f, 360f, DefautlColors.yellow)]
 		public LSkyFloat longitude = new LSkyFloat()
@@ -39,6 +43,8 @@ namespace AC.LSky
 
 		//-----------------------------------------------------------------------------------------
 
+		[Tooltip("Rotate moon in the opposite sun direction")]
+		public bool autoRotateMoon;
 
 		[LSkyFloatAttribute(-180f, 180f, 0.0f, 0.0f, 1.0f, 360f, DefautlColors.yellow)]
 		public LSkyFloat moonLatitude = new LSkyFloat()
@@ -63,6 +69,7 @@ namespace AC.LSky
 
 		};
 
+		public float XRot{ get{ return Timeline * (360f / k_HoursPerDay); } }
 
 		public Quaternion SunRotation
 		{
@@ -72,7 +79,7 @@ namespace AC.LSky
 
 				longitude.evaluateTime = EVALUATE_TIME_BY_TIMELINE;
 
-				float x = ((timeline-UTC) * (360f / k_HoursPerDay) - 90f);
+				float x = XRot - 90f;
 				float y = longitude.OutputValue;
 
 				return Quaternion.Euler(x, 0, 0) * Quaternion.Euler(0, y, 0);
@@ -86,18 +93,35 @@ namespace AC.LSky
 
 			get 
 			{
-				
+
 				moonLatitude.evaluateTime = EVALUATE_TIME_BY_TIMELINE;
-				moonLatitude.evaluateTime = EVALUATE_TIME_BY_TIMELINE;
-			
+				moonLongitude.evaluateTime = EVALUATE_TIME_BY_TIMELINE;
+
 				float x = moonLatitude.OutputValue + 90;
 				float y = moonLongitude.OutputValue;
 
 				return (Quaternion.Euler(x, 0, 0) * Quaternion.Euler(0, y, 0));
 			}
 		}
+
+		public Quaternion MoonRotationOpossiveSun
+		{
+
+
+			get 
+			{
+
+				float x = XRot - 270f;
+				float y = -longitude.OutputValue;
+				return Quaternion.Euler (x, 0, 0) * Quaternion.Euler (0, y, 0);
+
+			}
+
+		}
+
 		//-----------------------------------------------------------------------------------------
 
+	//	public DateTime SystemDateTime{ get{ return DateTime.Now; } }
 
 		public int CurrentHour{ get{ return (int)Mathf.Floor(timeline); } }
 		public int CurrentMinute{ get{ return (int)Mathf.Floor( (timeline - CurrentHour) * 60); } }
@@ -113,11 +137,10 @@ namespace AC.LSky
 				m_SkyManager = GetComponent<LSky>();
 				return;
 			}
-
 			ProgressTime();
-
+	
 			m_SkyManager.SetSunLightLocalRotation(SunRotation);
-			m_SkyManager.SetMoonLightLocalRotation(MoonRotation);
+			m_SkyManager.SetMoonLightLocalRotation(autoRotateMoon ? MoonRotationOpossiveSun : MoonRotation );
 
 			m_Transform.localEulerAngles = new Vector3(0.0f, orientation, 0.0f);
 

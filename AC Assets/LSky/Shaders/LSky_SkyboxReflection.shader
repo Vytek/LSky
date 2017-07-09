@@ -54,12 +54,9 @@ Shader "AC/LSky/Skybox Reflection"
 
 			struct v2f
 			{
-				float3 worldPos             : TEXCOORD0;
-				half3  color            : TEXCOORD1;
-			
-
-				float4 vertex               : SV_POSITION;
-
+				float3 worldPos : TEXCOORD0;
+				half3  color    : TEXCOORD1;
+				float4 vertex   : SV_POSITION;
 				UNITY_VERTEX_OUTPUT_STEREO 
 			};
 
@@ -79,7 +76,7 @@ Shader "AC/LSky/Skybox Reflection"
 
 				half3 inscatter; half4 outscatter;
 
-				AtmosphericScattering(o.worldPos, inscatter, outscatter);
+				AtmosphericScattering(o.worldPos, inscatter, outscatter, true);
 				//------------------------------------------------------------------------------
 
 				half3 color = inscatter;
@@ -90,17 +87,12 @@ Shader "AC/LSky/Skybox Reflection"
 
 				o.color = color;
 
-
 				return o;
 			}
 			
 			half4 frag (v2f i) : SV_Target
 			{
-
-
-				half3 color = i.color;
-
-				return half4(color,1);
+				return half4(i.color, 1);
 			}
 			ENDCG
 		}

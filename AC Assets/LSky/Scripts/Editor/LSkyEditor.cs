@@ -690,8 +690,6 @@ namespace AC.LSky
 			}
 			EditorGUILayout.EndHorizontal ();
 
-			EditorGUILayout.HelpBox("Reflection Probe configure in LSkyReflection", MessageType.Info);
-
 			AC_EditorUtility.Separator(SeparatorHeight);
 			EditorGUILayout.Separator();
 			//-------------------------------------------------------------------------------------------------------------------------------

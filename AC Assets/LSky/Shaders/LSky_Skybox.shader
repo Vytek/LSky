@@ -6,10 +6,10 @@ Shader "AC/LSky/Skybox"
 	Properties
 	{
 
-		_HorizonFade("Horizon Fade", Range(0,0.20)) = 0.006
+		_HorizonFade("Horizon Fade", Range(-0.50, 0.50)) = 0.006
 		_GroundFade("Ground Fade", Range(0,60)) = 30
 		_GroundAltitude("Ground Altitude", Range(0, 0.1)) = 0.01
-		_NebulaExponent("Nebula Exponent", Range(0, 20)) = 3
+		_NebulaExponent("Nebula Exponent", Range(1, 20)) = 3
 
 	}
 
@@ -95,7 +95,7 @@ Shader "AC/LSky/Skybox"
 				o.worldPos = normalize(mul((float3x3)unity_ObjectToWorld, v.vertex.xyz));
 				//------------------------------------------------------------------------------
 
-				AtmosphericScattering(o.worldPos, o.inScatter, o.outScatter);
+				AtmosphericScattering(o.worldPos, o.inScatter, o.outScatter, true);
 				//------------------------------------------------------------------------------
 
 				o.moonCoords = MOON_COORDS(v.vertex);

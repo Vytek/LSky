@@ -75,7 +75,7 @@ Shader "AC/LSky/Skybox Atmosphere"
 				o.worldPos = normalize(mul((float3x3)unity_ObjectToWorld, v.vertex.xyz));
 				//------------------------------------------------------------------------------
 
-				AtmosphericScattering(o.worldPos, o.inScatter, o.outScatter);
+				AtmosphericScattering(o.worldPos, o.inScatter, o.outScatter, true);
 				//------------------------------------------------------------------------------
 
 

@@ -25,18 +25,21 @@ namespace AC.LSky
 
 			if (timeText != null || TOD != null) 
 			{
-				timeText.text = GetTimeString(); 
+				timeText.text = GetTimeString; 
 			}
 		}
 
 
-		public string GetTimeString()
+		public string GetTimeString
 		{
-			string h   = TOD.CurrentHour   < 10 ? "0" + TOD.CurrentHour.ToString()   : TOD.CurrentHour.ToString();
-			string m   = TOD.CurrentMinute < 10 ? "0" + TOD.CurrentMinute.ToString() : TOD.CurrentMinute.ToString();
-			//----------------------------------------------------------------------------------------------------------------
+			get
+			{
+				string h = TOD.CurrentHour < 10 ? "0" + TOD.CurrentHour.ToString () : TOD.CurrentHour.ToString ();
+				string m = TOD.CurrentMinute < 10 ? "0" + TOD.CurrentMinute.ToString () : TOD.CurrentMinute.ToString ();
+				//----------------------------------------------------------------------------------------------------------------
 
-			return h   + ":" + m;
+				return h + ":" + m;
+			}
 		}
 
 

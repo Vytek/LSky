@@ -14,16 +14,27 @@ namespace AC.LSky
 	[ExecuteInEditMode] public partial class LSky : MonoBehaviour 
 	{
 
+	
 
 		#region Unity
 
+		void Awake()
+		{
+
+			if(!IsReady && Application.isPlaying) 
+			{
+				CacheComponents();
+			}
+		}
 
 		void Update()
 		{
 
 			if(!IsReady) 
 			{
-				CacheComponents();
+				if(!Application.isPlaying)
+					CacheComponents();
+				
 				return;
 			}
 
