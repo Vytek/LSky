@@ -104,7 +104,7 @@ namespace AC.LSky
 			}
 		}
 
-		public Quaternion MoonRotationOpossiveSun
+		public Quaternion MoonRotationOpposiveSun
 		{
 
 
@@ -140,7 +140,7 @@ namespace AC.LSky
 			ProgressTime();
 	
 			m_SkyManager.SetSunLightLocalRotation(SunRotation);
-			m_SkyManager.SetMoonLightLocalRotation(autoRotateMoon ? MoonRotationOpossiveSun : MoonRotation );
+			m_SkyManager.SetMoonLightLocalRotation(autoRotateMoon ? MoonRotationOpposiveSun : MoonRotation );
 
 			m_Transform.localEulerAngles = new Vector3(0.0f, orientation, 0.0f);
 
