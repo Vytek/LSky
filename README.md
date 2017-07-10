@@ -2,7 +2,7 @@
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9EXLS6X6XEDJE)
 
-Dynamic Sky Basic Solution
+Basic and free PBS dynamic sky system.
 
 # Features:
 - Day and night cycle. 
