@@ -16,7 +16,7 @@ https://www.eso.org/public/outreach/copyright/
 
 
 ==============
-   Notices
+   Other
 ==============
 
 GitHub repository.
