@@ -16,7 +16,11 @@ https://www.eso.org/public/outreach/copyright/
 
 
 ==============
+<<<<<<< HEAD
    Other.
+=======
+   Other
+>>>>>>> origin/master
 ==============
 
 GitHub repository.
