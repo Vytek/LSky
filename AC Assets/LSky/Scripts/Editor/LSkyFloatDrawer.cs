@@ -61,30 +61,13 @@ namespace AC.LSky
 
 			if(valueType.enumValueIndex == 0) // Input value.
 			{
+				
+				EditorGUI.PropertyField(rect, inputValue,  new GUIContent(displayName));
 
-				EditorGUI.BeginProperty(rect, label, inputValue);
-				{
-
-					EditorGUI.BeginChangeCheck();
-					float inVal = EditorGUI.FloatField(rect, new GUIContent(displayName), inputValue.floatValue);
-
-					if(EditorGUI.EndChangeCheck())
-					{
-						inputValue.floatValue = inVal;
-					}
-				}
-				EditorGUI.EndProperty();
 			}
 			else // Input curve.
 			{
-
-				EditorGUI.BeginProperty(rect, label, curve);
-				{
-					EditorGUI.BeginChangeCheck();
-					EditorGUI.PropertyField(rect, curve, new GUIContent(displayName));
-					EditorGUI.EndChangeCheck();
-				}
-				EditorGUI.EndProperty();
+				EditorGUI.PropertyField(rect, curve, new GUIContent(displayName));
 			}
 			//----------------------------------------------------------------------------
 

@@ -3,9 +3,13 @@
 =======================================- ChangeLog -=======================================
 ___________________________________________________________________________________________
 
-Notice: (Clouds) I am currently working on a new dynamic sky system and weather, the clouds for LSky will be added when my new system is finished.
+--------
+v 2.0.3c
+========
 
-LSky is a project that I did for fun and to gain some experience in the asset store, LSky does not give me any monetary gain to date, so it is something that I only work a few hours in my free time.
+* Fixed Curve Editor problems for  Unity v2017
+
+=======================================-    Old    -=======================================
 
 --------
 v 2.0.3b
@@ -15,10 +19,6 @@ v 2.0.3b
 * Fixed UTC. (LSkyTOD)
 * Fixed Moon Longitude.(LSkyTOD)
 * Added Opposite sun direction (LSkyTOD).
-
-
-=======================================-    Old    -=======================================
-
 
 --------
 v 2.0.3a

@@ -16,12 +16,12 @@ https://www.eso.org/public/outreach/copyright/
 
 
 ==============
-   Notices
+   Other.
 ==============
 
 GitHub repository.
 Do you want to make a donation?
-You can do it from the repository, this will help to maintain the asset.
+You can do it from the repository, this will help to support the asset.
 
 https://github.com/Akue/LSky
 

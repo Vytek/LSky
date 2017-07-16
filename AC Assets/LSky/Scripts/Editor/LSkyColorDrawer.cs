@@ -61,32 +61,13 @@ namespace AC.LSky
 			EditorGUI.indentLevel = 0;
 			//-----------------------------------------------------------------------------------
 
-
 			if(colorType.enumValueIndex == 0) // Input color.
 			{
-
-				EditorGUI.BeginProperty(rect, label, inputColor);
-				{
-
-					EditorGUI.BeginChangeCheck();
-					Color inputColorValue = EditorGUI.ColorField(rect, new GUIContent(displayName), inputColor.colorValue);
-					if(EditorGUI.EndChangeCheck()) 
-					{
-						inputColor.colorValue = inputColorValue;
-					}
-				}
-				EditorGUI.EndProperty();
+				EditorGUI.PropertyField(rect, inputColor, new GUIContent(displayName));
 			} 
 			else // Input gradient.
 			{
-
-				EditorGUI.BeginProperty(rect, label, gradient);
-				{
-					EditorGUI.BeginChangeCheck();
-					EditorGUI.PropertyField(rect, gradient, new GUIContent(displayName));
-					EditorGUI.EndChangeCheck();
-				}
-				EditorGUI.EndProperty();
+				EditorGUI.PropertyField(rect, gradient, new GUIContent(displayName));
 			}
 			//-----------------------------------------------------------------------------------
 

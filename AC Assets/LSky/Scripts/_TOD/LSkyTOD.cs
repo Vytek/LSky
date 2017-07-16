@@ -29,7 +29,7 @@ namespace AC.LSky
 	
 
 		[LSkyFloatAttribute(-180f, 180f, 0.0f, 0.0f, 1.0f, 360f, DefautlColors.yellow)]
-		public LSkyFloat longitude = new LSkyFloat()
+		public LSkyFloat equatorPos = new LSkyFloat()
 		{
 
 			valueType    = LSkyValueType.Value,
@@ -77,10 +77,10 @@ namespace AC.LSky
 			get 
 			{
 
-				longitude.evaluateTime = EVALUATE_TIME_BY_TIMELINE;
+				equatorPos.evaluateTime = EVALUATE_TIME_BY_TIMELINE;
 
 				float x = XRot - 90f;
-				float y = longitude.OutputValue;
+				float y = equatorPos.OutputValue;
 
 				return Quaternion.Euler(x, 0, 0) * Quaternion.Euler(0, y, 0);
 			}
@@ -112,7 +112,7 @@ namespace AC.LSky
 			{
 
 				float x = XRot - 270f;
-				float y = -longitude.OutputValue;
+				float y = -equatorPos.OutputValue;
 				return Quaternion.Euler (x, 0, 0) * Quaternion.Euler (0, y, 0);
 
 			}
@@ -137,8 +137,9 @@ namespace AC.LSky
 				m_SkyManager = GetComponent<LSky>();
 				return;
 			}
+				
 			ProgressTime();
-	
+
 			m_SkyManager.SetSunLightLocalRotation(SunRotation);
 			m_SkyManager.SetMoonLightLocalRotation(autoRotateMoon ? MoonRotationOpposiveSun : MoonRotation );
 

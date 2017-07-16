@@ -61,37 +61,13 @@ namespace AC.LSky
 			if(valueType.enumValueIndex == 0) // Input value.
 			{
 
-				EditorGUI.BeginProperty(rect, label, inputValue);
-				{
-
-					EditorGUI.BeginChangeCheck();
-					float inVal = EditorGUI.Slider(rect, new GUIContent(displayName), inputValue.floatValue, attr.minValue, attr.maxValue);
-
-					if(EditorGUI.EndChangeCheck())
-					{
-						inputValue.floatValue = inVal;
-					}
-				}
-				EditorGUI.EndProperty();
+				EditorGUI.Slider(rect, inputValue, attr.minValue, attr.maxValue, new GUIContent(displayName));
 			} 
 			else // Input curve.
 			{
 
-				EditorGUI.BeginProperty(rect, label, curve);
-				{
-
-					EditorGUI.BeginChangeCheck();
-					Color curveColor = attr.GetCurveColor();
-
-					AnimationCurve c = EditorGUI.CurveField(rect, new GUIContent(displayName), curve.animationCurveValue, curveColor, new Rect(attr.timeStart, attr.valueStart, attr.timeEnd, attr.valueEnd));
-
-					if (EditorGUI.EndChangeCheck()) 
-					{
-						curve.animationCurveValue = c;
-					}
-
-				}
-				EditorGUI.EndProperty();
+				Color curveColor = attr.GetCurveColor();
+				EditorGUI.CurveField(rect, curve, curveColor, new Rect(attr.timeStart, attr.valueStart, attr.timeEnd, attr.valueEnd), new GUIContent(displayName));
 			}
 			//------------------------------------------------------------------------
 
@@ -100,12 +76,15 @@ namespace AC.LSky
 			switchRect.height   = 20;  switchRect.width *= 0.1f;
 			//------------------------------------------------------------------------
 
-			// Switch color.
+
+
+			// Switch color type.
 			EditorGUI.BeginProperty(rect, label, valueType);
 			{
 
 				EditorGUI.BeginChangeCheck();
-				vt = (ValueType)EditorGUI.EnumPopup(switchRect, new GUIContent(""), vt, EditorStyles.miniLabel); 
+
+				vt = (ValueType)EditorGUI.EnumPopup(switchRect, new GUIContent("", "Switch Color/Gradient"), vt, EditorStyles.miniLabel); 
 
 				if (EditorGUI.EndChangeCheck()) 
 				{
@@ -113,6 +92,7 @@ namespace AC.LSky
 				}
 			}
 			EditorGUI.EndProperty();
+
 		}
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label) 
