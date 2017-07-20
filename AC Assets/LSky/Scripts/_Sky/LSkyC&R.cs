@@ -41,6 +41,9 @@ namespace AC.LSky
 				m_MoonLightTransform = m_MoonLight.transform;
 			else
 				m_MoonLightTransform = null;
+
+			if(!IsReady)
+				enabled = false;
 		}
 		//------------------------------------------------------------------------------------
 

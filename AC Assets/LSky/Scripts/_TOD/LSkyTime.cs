@@ -1,8 +1,7 @@
 ﻿
-
-////////////////////
-/// Time method. ///
-////////////////////
+/////////////
+/// Time  ///
+/////////////
 
 
 using System;
@@ -17,7 +16,6 @@ namespace AC.LSky
 
 
 		public    bool  playTime      = true; // Progress time.
-		public    bool  useSystemTime;
 		public    float dayInSeconds  = 900;  // 60*15 = 900 (15 minutes).
 		protected int   k_HoursPerDay = 24;   
 		//-------------------------------------------------------------------
@@ -25,7 +23,20 @@ namespace AC.LSky
 		[Range(0.0f, 24f)] public float timeline = 7.0f;
 		//-------------------------------------------------------------------
 
+
 		protected void ProgressTime()
+		{
+			timeline = Mathf.Repeat (timeline, k_HoursPerDay);
+
+			// Add time.
+			if (playTime && Application.isPlaying && dayInSeconds != 0)
+			{
+				timeline += (Time.deltaTime / dayInSeconds) * k_HoursPerDay; 
+			}
+		}
+
+
+		protected void ProgressTime(bool useSystemTime)
 		{
 
 
@@ -41,7 +52,7 @@ namespace AC.LSky
 			{
 				timeline = Mathf.Repeat (timeline, k_HoursPerDay);
 
-				// Add time in timeline.
+				// Add time.
 				if (playTime && Application.isPlaying && dayInSeconds != 0)
 				{
 					timeline += (Time.deltaTime / dayInSeconds) * k_HoursPerDay; 

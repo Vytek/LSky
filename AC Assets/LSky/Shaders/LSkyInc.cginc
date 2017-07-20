@@ -69,7 +69,7 @@ inline void ColorCorrection(inout half3 color, inout half3 groundColor)
 uniform half  _SunDiscSize;
 uniform half3 _SunDiscColor;
 
-#define SUN_COORDS(vertex) mul((float3x3)LSky_SunMatrix, vertex)
+#define SUN_COORDS(vertex) mul((float3x3)LSky_SunMatrix, vertex.xyz)
 
 inline half3 SunDisc(float3 dir)
 {
@@ -112,9 +112,9 @@ uniform half3 _NebulaColor;
 uniform half  _NebulaIntensity;
 
 
-#define OUTER_SPACE_COORDS(sunCoords) mul((float3x3)_OuterSpaceMatrix, sunCoords)
+#define OUTER_SPACE_COORDS(sunCoords) mul((float3x3)_OuterSpaceMatrix, sunCoords.xyz)
 
-#define STARS_NOISE_COORDS(sunCoords) mul((float3x3)_StarsNoiseMatrix, sunCoords)
+#define STARS_NOISE_COORDS(sunCoords) mul((float3x3)_StarsNoiseMatrix, sunCoords.xyz)
 
 inline half StarsScintillation(float3 coords)
 {

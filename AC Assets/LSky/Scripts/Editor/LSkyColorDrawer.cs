@@ -27,9 +27,10 @@ namespace AC.LSky
 		bool isCached = false;
 		//----------------------------------
 
-		enum ColorType{C, G} 
-		ColorType ct;
-		//----------------------------------
+		string[] options = new string[]
+		{
+			"C", "G"
+		};
 
 
 		public override void OnGUI(Rect rect, SerializedProperty property, GUIContent label)
@@ -54,9 +55,6 @@ namespace AC.LSky
 			}
 			//-----------------------------------------------------------------------------------
 
-			ct =  (ColorType)colorType.enumValueIndex;
-			//-----------------------------------------------------------------------------------
-
 			rect.height = 20f; rect.width *= 0.90f; 
 			EditorGUI.indentLevel = 0;
 			//-----------------------------------------------------------------------------------
@@ -65,7 +63,7 @@ namespace AC.LSky
 			{
 				EditorGUI.PropertyField(rect, inputColor, new GUIContent(displayName));
 			} 
-			else // Input gradient.
+			else
 			{
 				EditorGUI.PropertyField(rect, gradient, new GUIContent(displayName));
 			}
@@ -78,20 +76,7 @@ namespace AC.LSky
 			switchRect.height   = 20; switchRect.width *= 0.1f;
 			//-----------------------------------------------------------------------------------
 
-			// Switch color type.
-			EditorGUI.BeginProperty(rect, label, colorType);
-			{
-
-				EditorGUI.BeginChangeCheck();
-
-				ct = (ColorType)EditorGUI.EnumPopup(switchRect, new GUIContent("", "Switch Color/Gradient"), ct, EditorStyles.miniLabel); 
-
-				if (EditorGUI.EndChangeCheck()) 
-				{
-					colorType.enumValueIndex = (int)ct;
-				}
-			}
-			EditorGUI.EndProperty();
+			colorType.enumValueIndex = EditorGUI.Popup(switchRect, "", colorType.enumValueIndex, options,  EditorStyles.miniLabel); 
 
 		}
 

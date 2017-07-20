@@ -26,8 +26,11 @@ namespace AC.LSky
 		bool isCached = false;
 		//----------------------------------
 
-		enum ValueType{V,C} ValueType vt;
-		//----------------------------------
+		string[] options = new string[]
+		{
+			"V", "C",
+		};
+
 
 
 		public override void OnGUI(Rect rect, SerializedProperty property, GUIContent label)
@@ -52,8 +55,6 @@ namespace AC.LSky
 			}
 			//----------------------------------------------------------------------------
 
-			vt =  (ValueType)valueType.enumValueIndex;
-			//----------------------------------------------------------------------------
 
 			rect.height = 20f; rect.width *= 0.90f; 
 			EditorGUI.indentLevel = 0;
@@ -76,20 +77,7 @@ namespace AC.LSky
 			switchRect.height   = 20; switchRect.width *= 0.1f;
 			//----------------------------------------------------------------------------
 
-			// Switch value.
-			EditorGUI.BeginProperty(rect, label, valueType);
-			{
-
-				EditorGUI.BeginChangeCheck();
-
-				vt = (ValueType)EditorGUI.EnumPopup(switchRect, new GUIContent(""), vt, "Button"); 
-
-				if (EditorGUI.EndChangeCheck()) 
-				{
-					valueType.enumValueIndex = (int)vt;
-				}
-			}
-			EditorGUI.EndProperty();
+			valueType.enumValueIndex = EditorGUI.Popup(switchRect, "", valueType.enumValueIndex, options, EditorStyles.label); 
 
 		}
 

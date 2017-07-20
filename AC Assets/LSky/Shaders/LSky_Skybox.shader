@@ -126,12 +126,14 @@ Shader "AC/LSky/Skybox"
 
 
 				// Sun
+
 				color += MiePhase(sunCosTheta, LSky_SunBetaMiePhase, LSky_SunMieScattering,  LSky_SunMieColor) * i.outScatter.rgb;
 
 				#ifdef LSKY_ENABLE_SUN_DISC
 				half3 sunDisc  = SunDisc(ray-LSky_SunDir) * i.outScatter.rgb;
 				color += sunDisc;
 				#endif
+
 				//---------------------------------------------------------------------------------------------------------------------------------------
 
 				// Moon.
@@ -142,6 +144,9 @@ Shader "AC/LSky/Skybox"
 				color  += moon.rgb * i.extinction;
 				#endif
 				//---------------------------------------------------------------------------------------------------------------------------------------
+
+			
+
 
 
 				// Outer Space

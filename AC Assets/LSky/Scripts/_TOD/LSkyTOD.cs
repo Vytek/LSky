@@ -19,6 +19,7 @@ namespace AC.LSky
 		private LSky m_SkyManager = null;
 		private Transform m_Transform = null;
 
+		public    bool  useSystemTime;
 		[Range(-12f, 12f)] public int UTC = 0;
 
 		public float Timeline{ get{return timeline + UTC; } }
@@ -47,7 +48,7 @@ namespace AC.LSky
 		public bool autoRotateMoon;
 
 		[LSkyFloatAttribute(-180f, 180f, 0.0f, 0.0f, 1.0f, 360f, DefautlColors.yellow)]
-		public LSkyFloat moonLatitude = new LSkyFloat()
+		public LSkyFloat moonXRot = new LSkyFloat()
 		{
 
 			valueType    = LSkyValueType.Value,
@@ -59,7 +60,7 @@ namespace AC.LSky
 
 
 		[LSkyFloatAttribute(-180f, 180f, 0.0f, 0.0f, 1.0f, 360f, DefautlColors.yellow)]
-		public LSkyFloat moonLongitude = new LSkyFloat()
+		public LSkyFloat moonYRot = new LSkyFloat()
 		{
 
 			valueType    = LSkyValueType.Value,
@@ -94,11 +95,11 @@ namespace AC.LSky
 			get 
 			{
 
-				moonLatitude.evaluateTime = EVALUATE_TIME_BY_TIMELINE;
-				moonLongitude.evaluateTime = EVALUATE_TIME_BY_TIMELINE;
+				moonXRot.evaluateTime = EVALUATE_TIME_BY_TIMELINE;
+				moonYRot.evaluateTime = EVALUATE_TIME_BY_TIMELINE;
 
-				float x = moonLatitude.OutputValue + 90;
-				float y = moonLongitude.OutputValue;
+				float x = moonXRot.OutputValue + 90;
+				float y = moonYRot.OutputValue;
 
 				return (Quaternion.Euler(x, 0, 0) * Quaternion.Euler(0, y, 0));
 			}
@@ -138,7 +139,7 @@ namespace AC.LSky
 				return;
 			}
 				
-			ProgressTime();
+			ProgressTime(useSystemTime);
 
 			m_SkyManager.SetSunLightLocalRotation(SunRotation);
 			m_SkyManager.SetMoonLightLocalRotation(autoRotateMoon ? MoonRotationOpposiveSun : MoonRotation );
