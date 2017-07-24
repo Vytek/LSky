@@ -4,6 +4,8 @@
 
 Basic and free dynamic sky system.
 
+Notice: Clouds, realistic sun and moon positions, lunar phases will come in the September update.
+
 # Features:
 - Day and night cycle. 
 - Curve and gradient system. 
