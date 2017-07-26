@@ -96,6 +96,7 @@ inline half4 Moon(float3 coords, float cosTheta)
 
 	return half4(color.rgb, mask); // RGB = Moon, Alpha = Mask.
 }
+
 //-------------------------------------------------------------------------------------------
 
 // Outer space.

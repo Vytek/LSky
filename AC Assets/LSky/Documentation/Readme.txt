@@ -20,15 +20,13 @@ https://www.eso.org/public/outreach/copyright/
 ==============
 
 GitHub repository.
-Do you want to make a donation?
-You can do it from the repository(green button), this will help to support the asset.
 
 https://github.com/Akue/LSky
 
+If you have suggestions for improving the asset/scripting, please let me know.
 
-Are you using this asset in a video game? 
+Support: ac3spp@gmail.com
 
-I would like you to inform me about this when this is published(it's not mandatory).
 //--------------------------------------------------------------------------------------
 
 

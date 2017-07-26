@@ -17,7 +17,7 @@ namespace AC.LSky
 
 		public    bool  playTime      = true; // Progress time.
 		public    float dayInSeconds  = 900;  // 60*15 = 900 (15 minutes).
-		protected int   k_HoursPerDay = 24;   
+		protected const int k_HoursPerDay = 24;   
 		//-------------------------------------------------------------------
 
 		[Range(0.0f, 24f)] public float timeline = 7.0f;
