@@ -15,3 +15,5 @@ Basic and free dynamic sky system.
 Moon Texture: http://www.mediafire.com/file/dsubr1ft58sgjcc/Full_Moon_Texture_Free_v1.1.unitypackage
 
 Asset Store: https://www.assetstore.unity3d.com/en/#!/content/71422
+
+Notice: There will be new features for this asset, new updates will be to solve existing problems, sorry.
