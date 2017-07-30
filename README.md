@@ -1,4 +1,4 @@
-# LSky v2.0.3d
+# LSky v2.0.3e
 
 Basic and free dynamic sky system.
 
@@ -14,6 +14,6 @@ Basic and free dynamic sky system.
 
 Moon Texture: http://www.mediafire.com/file/dsubr1ft58sgjcc/Full_Moon_Texture_Free_v1.1.unitypackage
 
-Asset Store: https://www.assetstore.unity3d.com/en/#!/content/71422
+Asset Store: https://www.assetstore.unity3d.com/en/#!/content/71422 
 
-........
+Notice: This asset will not receive more updates, it will be replaced by another in the future
