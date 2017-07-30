@@ -4,6 +4,16 @@
 ___________________________________________________________________________________________
 
 --------
+v 2.0.3e
+========
+
+* Removed "SetSunRotation", "SetSunLocalRotation", "SetMoonLocalRotaion", "SetMoonRotation" methods.
+
+
+=======================================-    Old    -=======================================
+
+
+--------
 v 2.0.3d
 ========
 
@@ -14,8 +24,6 @@ v 2.0.3d
 * Changed longitud name to equatorPos.
 * Changed moon latitud name to Moon X rot.
 * Changed moon longitud name to Moon Y rot.
-
-=======================================-    Old    -=======================================
 
 
 --------

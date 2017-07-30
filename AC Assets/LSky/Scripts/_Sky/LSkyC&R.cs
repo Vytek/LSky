@@ -22,11 +22,31 @@ namespace AC.LSky
 
 		[SerializeField] private Light m_SunLight = null;        // Sun light component.
 		private Transform m_SunLightTransform;                   // Sun light transform component.
-		public  Transform SunLightTransform{ get{ return m_SunLightTransform; } }
+		public  Transform SunLightTransform
+		{ 
+			get{ return m_SunLightTransform; } 
+			set 
+			{
+				m_SunLightTransform.eulerAngles      = value.eulerAngles;
+				m_SunLightTransform.localEulerAngles = value.localEulerAngles;
+				m_SunLightTransform.rotation         = value.rotation;
+				m_SunLightTransform.localRotation    = value.localRotation;
+			}
+		}
 
 		[SerializeField] private Light m_MoonLight = null;       // Moon light component.
 		private Transform m_MoonLightTransform;                  // Moon light transform component.
-		public  Transform MoonLightTransform{ get{ return m_MoonLightTransform; } }
+		public  Transform MoonLightTransform
+		{ 
+			get{ return m_MoonLightTransform; } 
+			set 
+			{
+				m_MoonLightTransform.eulerAngles      = value.eulerAngles;
+				m_MoonLightTransform.localEulerAngles = value.localEulerAngles;
+				m_MoonLightTransform.rotation         = value.rotation;
+				m_MoonLightTransform.localRotation    = value.localRotation;
+			}
+		}
 		//------------------------------------------------------------------------------------
 
 		// Cache necessary components.
@@ -46,44 +66,6 @@ namespace AC.LSky
 				enabled = false;
 		}
 		//------------------------------------------------------------------------------------
-
-		/// <summary>
-		/// Set sun local rotation.
-		/// </summary>
-		/// <param name="rot">Rot.</param>
-		public void SetSunLightLocalRotation(Quaternion rot)
-		{
-			m_SunLightTransform.localRotation = rot;
-		}
-
-		/// <summary>
-		/// Set sun rotation
-		/// </summary>
-		/// <param name="rot">Rot.</param>
-		public void SetSunLightRotation(Quaternion rot)
-		{
-			m_SunLightTransform.rotation = rot;
-		}
-		//------------------------------------------------------------------------------------
-
-
-		/// <summary>
-		/// Set sun local rotation.
-		/// </summary>
-		/// <param name="rot">Rot.</param>
-		public void SetMoonLightLocalRotation(Quaternion rot)
-		{
-			m_MoonLightTransform.localRotation = rot;
-		}
-
-		/// <summary>
-		/// Set sun rotation
-		/// </summary>
-		/// <param name="rot">Rot.</param>
-		public void SetMoonLightRotation(Quaternion rot)
-		{
-			m_MoonLightTransform.rotation = rot;
-		}
 
 
 		// Check components and resources.
