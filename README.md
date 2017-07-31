@@ -16,6 +16,4 @@ Moon Texture: http://www.mediafire.com/file/dsubr1ft58sgjcc/Full_Moon_Texture_Fr
 
 Asset Store: https://www.assetstore.unity3d.com/en/#!/content/71422
 
-Notice: Because I do not earn money with this asset (it is more a need to finance my game), I have decided to create a new payment asset more advanced, this asset will now only receive updates that solutions bugs, etc. But will not have new features, sorry.
-
-
+........
