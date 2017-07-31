@@ -16,4 +16,4 @@ Moon Texture: http://www.mediafire.com/file/dsubr1ft58sgjcc/Full_Moon_Texture_Fr
 
 Asset Store: https://www.assetstore.unity3d.com/en/#!/content/71422 
 
-Notice: This asset will not receive more updates, it will be replaced by another in the future
+Notice: This asset will not receive more updates, it will be replaced by another in the future(With another license but with more features)
