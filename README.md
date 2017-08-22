@@ -2,6 +2,8 @@
 
 Basic and free dynamic sky system.
 
+Notice: This asset is obsolete, I recommend only to use as a reference, will soon upload a more complete, better programmed and compatible with mobile devices.
+
 # Features:
 - Day and night cycle. 
 - Curve and gradient system. 
@@ -15,6 +17,3 @@ Basic and free dynamic sky system.
 Moon Texture: http://www.mediafire.com/file/dsubr1ft58sgjcc/Full_Moon_Texture_Free_v1.1.unitypackage
 
 Asset Store: https://www.assetstore.unity3d.com/en/#!/content/71422 
-
-Notice: This asset is obsolete, I recommend only to use as a reference, will soon upload a more complete, better programmed and compatible with mobile devices.
-
